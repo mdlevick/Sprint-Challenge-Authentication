@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (authorization) {
-    const secret = process.env.JWT_SECRET || "keep me secret";
+    const secret = process.env.JWT_SECRET || "cernunnos";
     jwt.verify(authorization, secret, function(err, decoded) {
       if (err) {
         res.status(401).json({ you: "shall not pass!" });
